@@ -1,0 +1,108 @@
+/*
+.awesome
+{
+    animation: cool 3s alternate infinite;
+}
+
+.highlight
+{
+    color: blue;
+}
+
+@keyframes cool
+{
+    to{
+        transform:translate(90vw);
+    }
+}
+
+#anim
+{
+    background:red;
+    width: 200px;
+    height: 200px;
+}
+#anim.enable
+{
+    animation: flash 1s ease infinite;
+}
+
+@keyframes flash
+{
+    50%
+    {
+        opacity:0;
+    }
+}*/
+
+/*
+.headbutt
+{
+    animation: headbutt 0.1s 3;
+}
+@keyframes headbutt
+{
+    0%
+    {
+        transform: rotate(0deg);
+    }
+    10%
+    {
+        transform: rotate(-10deg);
+    }
+    20%
+    {
+        transform: rotate(20deg);
+    }
+    35%
+    {
+        transform: rotate(45deg);
+    }
+}
+
+.CaptainHasBeenHit
+{
+    animation: CaptainHasBeenHit 1s ease-in forwards;
+}
+@keyframes CaptainHasBeenHit
+{
+    to
+    {
+        transform: translate(100vw) rotate(1000deg);
+    }
+}*/
+
+#rainbowbox
+{
+    width: 300px;
+    height: 300px;
+    border: 1px solid black;
+}
+#rainbowbox.bg_red
+{
+    background-color: red;
+}
+#rainbowbox.bg_orange
+{
+    background-color: orange;
+}
+#rainbowbox.bg_yellow
+{
+    background-color: yellow;
+}
+#rainbowbox.bg_green
+{
+    background-color: green;
+}
+#rainbowbox.bg_blue
+{
+    background-color: blue;
+}
+#rainbowbox.bg_indigo
+{
+    background-color: indigo;
+}
+#rainbowbox.bg_violet
+{
+    background-color: violet;
+}

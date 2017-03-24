@@ -19,7 +19,7 @@
 }
 svg
 {
-    width: 100vw;
+    width: 45vw;
     height: auto;
 }
 .name
@@ -45,13 +45,26 @@ svg
     border: 1px solid;
     height: 44vw;
     width: 70vw;
+    overflow: hidden;
 }
-
 #ant
 {
     width: 100px;
     height: 70px;
+    background-image: url("imgs/spritesheet_tabi.png");
+    display: block;
+    position: relative;
+    top: 85%;
+    left: -45%;
     filter: brightness(2);
+    animation: walking 1s steps(11) infinite;
+}
+@keyframes walking
+{
+    to
+    {
+        background-position: -1100px;
+    }
 }
 
 .button
@@ -68,135 +81,120 @@ svg
 }
 /********************* classes for animations **********************/
 
-.move
+#ant.move
 {
-    animation: moving 10s linear infinite;
+    animation: walking 1s steps(11) infinite, moving 5s linear infinite ;
 }
 @keyframes moving
 {
     from
     {
-        transform: translate(0vw, 35vw);
+        transform: translate(-50%, 75%);
     }
     to
     {
-        transform: translate(100vw, -10vw);
+        transform: translate(1200%, -795%);
     }
 }
 
-.moveTo30
+#ant.moveTo30
 {
-    margin-top: 63vh;
-    animation: moveToThirty 2s ease-in forwards;
+    animation: walking 1s steps(11) infinite, moveToThirty 2s ease-in forwards;
 }
 @keyframes moveToThirty
 {
-    from
-    {
-        transform: translate(-5vw, 0);
-    }
     to
     {
-        transform:translate(30vw, 0);
+        transform: translate(330%, -240%);
     }
 }
 
-.moveFrom30
+#ant.moveFrom30
 {
-    margin-top: 63vh;
-    margin-left: 30vw;
-    animation: moveFromThirty 2s ease-out forwards;
+    animation: walking 1s steps(11) infinite, moveFromThirty 2s ease-out forwards;
 }
 @keyframes moveFromThirty
 {
+    from
+    {
+        transform: translate(330%, -240%);
+    }
     to
     {
-        transform: translate(-35vw, 0%);
+        transform: translate(-35%, 70%);
     }
 }
 
-.oneJump
+#ant.oneJump
 {
-    margin-top: 63vh;
-    margin-left: 0;
     animation: jump 1s linear 1;
 }
 @keyframes jump
 {
     50%
     {
-        transform: translate(0vw, -6vw);
+        transform: translate(0, -150%);
     }
 }
 
-.jumpingMulti
+#ant.jumpingMulti
 {
-    margin-top: 38vw;
-    margin-left: 0;
-    animation: jumps 10s ease-in infinite;
+    animation: jumps 10s ease-in-out infinite;
 }
 @keyframes jumps
 {
-    0%
+    8.33%
     {
-        margin-left: 0;
-        margin-top: 38vw;
-        transform: translate(0vw, -6vw);
+        transform: translate( 50%, -250%);
     }
-    12.5%
+    16.66%
     {
-        margin-left: 2vw;
-        margin-top: 26.75vw;
-        transform: translate(5vw, -6vw);
+        transform: translate( 200%, -100%);
     }
     25%
     {
-        margin-left: 5vw;
-        margin-top: 29.75vw;
-        transform: translate(10vw, -6vw);
+        transform: translate( 250%, -400%);
     }
-    37.5%
+    33.33%
     {
-        margin-left: 10vw;
-        margin-top: 18.5vw;
-        transform: translate(15vw, -6vw);
+        transform: translate(400%, -320%);
+    }
+    41.66%
+    {
+        transform: translate(450%, -550%);
     }
     50%
     {
-        margin-left: 15vw;
-        margin-top: 21.5vw;
-        transform: translate(20vw, -6vw);
+        transform: translate(600%, -400%);
     }
-    62.5%
+    58.33%
     {
-        margin-left: 20vw;
-        margin-top: 10.25vw;
-        transform: translate(25vw, -6vw);
+        transform: translate(700%, -650%);
+    }
+    66.66%
+    {
+        transform: translate(850%, -550%);
     }
     75%
     {
-        margin-left: 25vw;
-        margin-top: 12.25vw;
-        transform: translate(30vw, -6vw);
+        transform: translate(900%, -750%);
     }
-    87.5%
+    83.33%
     {
-        margin-left: 30vw;
-        margin-top: 7vw;
-        transform: translate(35vw, -6vw);
+        transform: translate(1050%, -650%);
+    }
+    91.66%
+    {
+        transform: translate(1100%, -850%);
     }
     100%
     {
-        margin-left: 35vw;
-        margin-top: 8vw;
-        transform: translate(40vw, -6vw);
+        transform: translate(1200%, -750%);
     }
 }
-.fadeout
+#ant.fadeout
 {
-    margin-top: 23vw;
-    margin-left: 27vw;
-    animation: fading 4s ease 1;
+    animation: walking 1s steps(11) infinite, moveToThirty 2s ease-in forwards, fading 4s ease 1;
 }
 @keyframes fading
 {
@@ -206,24 +204,31 @@ svg
     }
 
 }
-.glow
+#ant.glow
 {
-    margin-top: 23vw;
-    margin-left: 27vw;
-    animation: glowing 4s ease infinite;
+    animation: walking 1s steps(11) infinite, moveToThirty 2s ease-in forwards, glowing 4s ease infinite;
 }
 @keyframes glowing
 {
-    to
+    25%
     {
-        filter: drop-shadow(5px 5px 5px yellow);
+        filter: drop-shadow(5px 5px 5px rgba(255,255,0,0.25));
     }
-
+    50%
+    {
+        filter: drop-shadow(5px 5px 5px rgba(255,255,0,0.50));
+    }
+    75%
+    {
+        filter: drop-shadow(5px 5px 5px rgba(255,255,0,0.75));
+    }
+    100%
+    {
+        filter: drop-shadow(5px 5px 5px rgba(255,255,0,1.0));
+    }
 }
-.fallDown
+#ant.fallDown
 {
-    margin-top: 23vw;
-    margin-left: 27vw;
     animation: falling 1s linear forwards;
 }
 @keyframes falling
@@ -238,15 +243,13 @@ svg
         transform: rotate(-360deg);
     }
 }
-.speak
+#ant.speak
 {
 
 }
 
-.shake
+#ant.shake
 {
-    margin-top: 23vw;
-    margin-left: 27vw;
     animation: shaking 0.5s infinite;
 }
 @keyframes shaking
@@ -264,10 +267,8 @@ svg
     100% { -webkit-transform: translate(1px, -2px) rotate(-1deg); }
 }
 
-.mirror
+#ant.mirror
 {
-    margin-top: 23vw;
-    margin-left: 27vw;
     animation: mirror 1s forwards;
 }
 @keyframes mirror
@@ -278,7 +279,7 @@ svg
     }
 }
 
-.moveTo0
+#ant.moveTo0
 {
     animation: movetozero 1s forwards;
 }
@@ -290,7 +291,7 @@ svg
     }
 }
 
-.funExtraFlip
+#ant.funExtraFlip
 {
     margin-top: 23vw;
     margin-left: 27vw;

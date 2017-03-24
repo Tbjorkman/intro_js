@@ -41,6 +41,8 @@ function scrollDown()
 
 let ant = document.querySelector('#ant');
 
+let walk = document.querySelector('.walk');
+
 /************* button for move in my case I had the ant move down **************/
 
 let buttonMove = document.querySelector('#move');
@@ -62,7 +64,7 @@ buttonToThirty.addEventListener('click', movesToThirty);
 function movesToThirty()
 {
     console.log('ant moves to 30 percent');
-    ant.classList.toggle('moveTo30');
+    ant.classList.add('moveTo30');
 }
 
 /************* button for move from 30 **************/
@@ -73,8 +75,9 @@ buttonFromThirty.addEventListener('click', movesFromThirty);
 
 function movesFromThirty()
 {
+    ant.className = '';
     console.log('ant moves from 30 percent');
-    ant.classList.toggle('moveFrom30');
+    ant.classList.add('moveFrom30');
 }
 
 /************* button for one jump **************/
@@ -85,6 +88,7 @@ buttonJump.addEventListener('click', jump);
 
 function jump()
 {
+    ant.className = '';
     console.log('ant jumps once');
     ant.classList.toggle('oneJump');
 }
@@ -212,3 +216,11 @@ function funExtraFlip()
     console.log('ant flip');
     ant.classList.toggle('funExtraFlip');
 }
+
+/********************* function test **************************
+
+function life(job, kids, address, spouse) {
+    console.log('My job is , ' + job + 'I have ' + kids + ' kids. I live at ' + address + '. I am married to ' + spouse)
+
+}
+life('Graphic Designer', 3, '3 Bluemoon st., 6453 city', 'John');*/
