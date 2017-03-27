@@ -45,7 +45,7 @@ svg
     border: 1px solid;
     height: 44vw;
     width: 70vw;
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 #ant
 {
@@ -108,9 +108,23 @@ svg
         transform: translate(330%, -240%);
     }
 }
+#ant.mirror
+{
+    margin-left: 75%;
+    margin-top: -15%;
+    animation: walking 1s steps(11) infinite, mirror 1s forwards;
+}
+@keyframes mirror
+{
+    to
+    {
+        transform: scaleX(-1);
+    }
+}
 
 #ant.moveFrom30
 {
+    
     animation: walking 1s steps(11) infinite, moveFromThirty 2s ease-out forwards;
 }
 @keyframes moveFromThirty
@@ -121,7 +135,7 @@ svg
     }
     to
     {
-        transform: translate(-35%, 70%);
+        transform: translate(-20%, 55%);
     }
 }
 
@@ -239,7 +253,6 @@ svg
     }
     100%
     {
-        margin-top: 50vh;
         transform: rotate(-360deg);
     }
 }
@@ -265,18 +278,6 @@ svg
     80% { -webkit-transform: translate(-1px, -1px) rotate(1deg); }
     90% { -webkit-transform: translate(2px, 2px) rotate(0deg); }
     100% { -webkit-transform: translate(1px, -2px) rotate(-1deg); }
-}
-
-#ant.mirror
-{
-    animation: mirror 1s forwards;
-}
-@keyframes mirror
-{
-    to
-    {
-        transform: scaleX(-1);
-    }
 }
 
 #ant.moveTo0

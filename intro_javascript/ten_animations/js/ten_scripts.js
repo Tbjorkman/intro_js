@@ -67,6 +67,19 @@ function movesToThirty()
     ant.classList.add('moveTo30');
 }
 
+/************** button for mirror ****************/
+
+let buttonMirror= document.querySelector('#mirror');
+
+buttonMirror.addEventListener('click', mirrors);
+
+function mirrors()
+{
+    ant.className = '';
+    console.log('ant mirroring');
+    ant.classList.add('mirror');
+}
+
 /************* button for move from 30 **************/
 
 let buttonFromThirty = document.querySelector('#moveFrom30');
@@ -191,18 +204,6 @@ function moveToZero()
 {
     console.log('ant mirroring');
     ant.classList.toggle('moveTo0');
-}
-
-/************** button for mirror ****************/
-
-let buttonMirror= document.querySelector('#mirror');
-
-buttonMirror.addEventListener('click', mirrors);
-
-function mirrors()
-{
-    console.log('ant mirroring');
-    ant.classList.toggle('mirror');
 }
 
 /************** button for funExtraFlip ****************/

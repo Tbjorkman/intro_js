@@ -106,3 +106,45 @@
 {
     background-color: violet;
 }
+
+p
+{
+    background-color: black;
+    color: #FFFFFF;
+    cursor: pointer;
+    text-decoration: underline lightblue;
+    transition: 3s;
+}
+
+.hide
+{
+    text-decoration: line-through lightcoral;
+}
+
+.crossout
+{
+    text-decoration: line-through yellow;
+}
+
+#rose img
+{
+    width: 20%;
+    height: auto;
+    float: left;
+}
+.fade
+{
+    animation:fadeOut 2s ease-in-out forwards;
+}
+
+@keyframes fadeOut
+{
+    50%
+    {
+        opacity: 0.5;
+    }
+    100%
+    {
+        opacity: 0.2;
+    }
+}

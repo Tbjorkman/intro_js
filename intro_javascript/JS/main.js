@@ -43,12 +43,11 @@ function throwCaptainAmericaBack()
     captain.classList.add('CaptainHasBeenHit');
 }*/
 
+
 let cb = document.querySelector('#rainbowbox');
 
 /*
-* when the box has been clicked 3 times, fade it a little
-*
-* when the box has been clicked 6 times hide it*/
+* for each time the box is clicked switch the colors to go through the rainbow*/
 
 let numberOfClicks = 0;
 
@@ -101,5 +100,103 @@ function boxClicked() {
         cb.className = '';
         cb.classList.add('bg_violet');
         numberOfClicks = 0;
+    }
+}
+/*let friends = ['Jonas', 'Peter', 'Louise', 'Gullan'];
+
+console.log([0]);
+
+console.log(friends.length);
+
+let teachers = ['Jonas', 'Julio', 'Peter', 'Kenny', 'Gullan', 'Allan'];
+
+friends.forEach(logMyFriends);
+
+function logMyFriends(item, index)
+{
+    console.log('at index ' + ' we have ' + item);
+}*/
+
+let hobbies = ['crochet', 'sewing', 'jewelry making', 'baking', 'cooking'];
+
+hobbies.forEach(logMyHobbies);
+
+function logMyHobbies(hobbies, number)
+{
+    console.log('list my ' + hobbies + ' ' + number);
+}
+
+
+let paragraph = document.querySelectorAll('p');
+
+
+paragraph.forEach(loop);
+
+function loop(p)
+{
+    p.addEventListener('click', pClicked)
+}
+
+function pClicked()
+{
+    console.log(this);
+    this.classList.toggle('hide');
+}
+
+/* afordance = is giving the user a hint of what is possible */
+
+let li = document.querySelectorAll('li');
+let shoppingList = document.querySelector('#toDoList');
+let input = document.querySelector('input');
+let btn = document.querySelector('button');
+
+btn.addEventListener('click', addItem);
+
+
+function addItem()
+{
+       let newShoppingList = document.createElement('li');
+       newShoppingList.addEventListener('click', crossedOut);
+       newShoppingList.innerHTML=input.value;
+       shoppingList.appendChild(newShoppingList);
+}
+
+li.forEach(function (item) {item.addEventListener('click', crossedOut);  });
+
+function crossedOut()
+{
+    console.log(this);
+    this.classList.toggle('crossout');
+}
+
+
+let headline = document.querySelector('h1');
+let roses = document.querySelectorAll('img');
+let sneeze = document.querySelector('#achoo');
+let roseClicks = 0;
+
+roses.forEach(listenEventImg);
+
+function listenEventImg(rose)
+{
+    rose.addEventListener('click', roseFade);
+}
+
+function roseFade()
+{
+    this.classList.add('fade');
+    roseClicks++;
+
+    if(roseClicks === 3)
+    {
+        sneeze.volume=.5;
+        sneeze.play();
+        headline.innerHTML="Flowers Picked 3"
+    }
+    else if(roseClicks === 6)
+    {
+        sneeze.volume=.5;
+        sneeze.play();
+        headline.innerHTML="Flowers Picked 6 ";
     }
 }
