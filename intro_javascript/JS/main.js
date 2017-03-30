@@ -43,6 +43,129 @@ function throwCaptainAmericaBack()
     captain.classList.add('CaptainHasBeenHit');
 }*/
 
+/*How to use setAttribute setInterval and loop through them*/
+
+/*let body = document.querySelector('body');
+my.addEventListener('click', bodyClick);
+
+function bodyClick()
+{
+    console.log('can not click on body');
+}*/
+
+let paths = document.querySelectorAll('#Layer_1 path, line');
+// console.log(paths)
+paths.forEach(handleOnePath);
+
+function handleOnePath(elem, index)
+{
+    elem.setAttribute('pathLength', 1);
+
+    setTimeout(drawPath, index * 500);
+
+    function drawPath()
+    {
+        elem.classList.add('draw');
+        console.log(elem);
+    }
+}
+
+//myRandom will contain a number between 0 and 1
+let myRandom = Math.random();
+
+myRandom = Math.random() * 11;
+
+//let's make it between 0 and 10
+//let mynum = Math.floor(myRandom);
+//let mynum = Math.ceil(myRandom);
+//let mynum = Math.round(myRandom);
+
+
+//adding style/animations via javascript
+
+let header = document.querySelector('h1');
+
+setInterval(move, 200); // 1000 / 200
+
+function move()
+{
+    let newPosX = Math.floor(
+        Math.random()*80
+    );
+
+    let newPosY = Math.floor(
+        Math.random()*80
+    );
+
+    header.style.transform = "translate ("+newPosX +" vw, "+newPosY+" vh,)";
+}
+
+//more events
+
+/*window.addEventListener("load", pageReady);
+
+function pageReady()
+{
+    console.log("all css, js, images etc have been loaded");
+}*/
+
+// key events
+
+let pagetitle = document.querySelector('h2');
+let box = document.querySelector('#box');
+
+window.addEventListener('keyup', fingerUp);
+
+function fingerUp(MyInfoObject)
+{
+    console.log(MyInfoObject.key);
+    //pagetitle.innerHTML += MyInfoObject.key;
+    if (MyInfoObject.key == "ArrowRight")
+    {
+        box.style.transform = "translateX(80vw)";
+    }
+    if (MyInfoObject.key == "ArrowLeft")
+    {
+        box.style.transform = "translateY(80vw)";
+    }
+    if (MyInfoObject.key == "ArrowDown")
+    {
+        box.style.transform = "translateX(80vw)";
+    }
+    if (MyInfoObject.key == "ArrowUp")
+    {
+        box.style.transform = "translateY(80vw)";
+    }
+}
+
+
+
+/*how to change the image dynamically */
+/*let image = document.querySelector('img');
+
+let images = ["image1.png", "image2.png", "image3.png", "image4.png", "image5.png"];
+
+let counter = 0;
+
+
+
+let id = setInterval(swapImage, 1000);
+
+/!*setTimeout(swapImage, 3000); Delays the showing of an image *!/
+
+function swapImage()
+{
+    counter++;
+    console.log(images[counter]);
+    image.setAttribute('src', images[counter]);
+
+    if(counter === images.length-1)
+    {
+        /!*clearInterval(id);*!/
+        counter = -1;
+    }
+}*/
+
 
 let cb = document.querySelector('#rainbowbox');
 
@@ -198,5 +321,11 @@ function roseFade()
         sneeze.volume=.5;
         sneeze.play();
         headline.innerHTML="Flowers Picked 6 ";
+    }
+    else if(roseClicks === 9)
+    {
+        sneeze.volume=.5;
+        sneeze.play();
+        headline.innerHTML="Flowers Picked 9 ";
     }
 }

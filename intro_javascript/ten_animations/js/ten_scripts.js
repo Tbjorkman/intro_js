@@ -154,7 +154,7 @@ function fallingDown()
     ant.classList.toggle('fallDown');
 }
 
-/******************** will be using this for the speach function ************************/
+/******************** will be using this for the speech function ************************/
 
 let soundNature = document.querySelector('#nature');
 
