@@ -1,0 +1,208 @@
+*
+{
+    padding: 0;
+    margin: auto;
+    box-sizing: border-box;
+}
+body
+{
+
+}
+#background
+{
+    width: 100vw;
+    height: 100vh;
+    background:url("../img/background_meadow.png") no-repeat center;
+    overflow: hidden;
+}
+
+.row
+{
+    width: 100vw;
+    height:auto;
+}
+
+#titlePage
+{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 9000;
+}
+
+#begin_btn
+{
+    width: 10vw;
+    height: 10vh;
+    position: absolute;
+    z-index: 9999;
+    background:none;
+    border: none;
+    font-size: x-large;
+    color: #032c45;
+    margin-left: 45vw;
+    margin-top: 83vh;
+    cursor: pointer;
+}
+#begin_btn:hover
+{
+    color: white;
+}
+
+#crow
+{
+    width: 15%;
+    height: auto;
+    margin-left: 68vw;
+    margin-top: 22vh;
+    display: inline;
+    z-index: 1;
+}
+#cheese_sm
+{
+    width: 5vw;
+    height: auto;
+    margin-left: -14vw;
+    margin-top: 36vh;
+    display: inline;
+    position: absolute;
+    transform: rotate(-3deg);
+    z-index: 2;
+}
+
+#fox
+{
+    width: 35%;
+    height: auto;
+    margin-left: -120vw;
+    margin-top: 28vh;
+}
+
+/********************  animation classes  *************************/
+
+.FadeIn
+{
+    animation: fading_in 3s linear forwards; /*change time to 3 again*/
+}
+@keyframes fading_in
+{
+    0%
+    {
+        opacity: 0;
+    }
+    25%
+    {
+        opacity: 0;
+    }
+    50%
+    {
+        opacity: 0;
+    }
+    75%
+    {
+        opacity: 0.25;
+    }
+    100%
+    {
+        opacity: 1;
+    }
+}
+
+.titleFadeOut
+{
+    animation: goAway 1s ease-in-out forwards;
+}
+@keyframes goAway
+{
+    to
+    {
+        opacity: 0;
+    }
+}
+
+.sceneFadeIn
+{
+    animation: showScene 5s ease-in-out forwards;  /*change time to 5 again*/
+}
+@keyframes showScene
+{
+    to
+    {
+        opacity: 1;
+    }
+}
+
+#fox.foxEnters
+{
+    animation: foxMoves 5s ease-in forwards;  /*change time to 3 again*/
+}
+@keyframes foxMoves
+{
+   to
+    {
+        transform: translate(98vw, -8vh);
+    }
+}
+
+#fox.pulsing
+{
+    animation: foxMoves 5s ease-in forwards, glowing 0.7s alternate infinite;
+}
+@keyframes glowing
+{
+    25%
+    {
+        filter: drop-shadow(15px 15px 15px rgba(230, 230, 0,0.25));
+    }
+    50%
+    {
+        filter: drop-shadow(15px 15px 15px rgba(230, 230, 0,0.50));
+    }
+    75%
+    {
+        filter: drop-shadow(15px 15px 15px rgba(230, 230, 0, .75));
+    }
+    100%
+    {
+        filter: drop-shadow(15px 15px 15px rgba(230, 230, 0, 1.0));
+    }
+}
+
+#fox.giggles
+{
+    animation: giggle 0.5s infinite;
+}
+@keyframes giggle
+{
+    0% { -webkit-transform: translate(2px, 1px) rotate(0deg); }
+    10% { -webkit-transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { -webkit-transform: translate(-3px, 0px) rotate(1deg); }
+    30% { -webkit-transform: translate(0px, 2px) rotate(0deg); }
+    40% { -webkit-transform: translate(1px, -1px) rotate(1deg); }
+    50% { -webkit-transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { -webkit-transform: translate(-3px, 1px) rotate(0deg); }
+    70% { -webkit-transform: translate(2px, 1px) rotate(-1deg); }
+    80% { -webkit-transform: translate(-1px, -1px) rotate(1deg); }
+    90% { -webkit-transform: translate(2px, 2px) rotate(0deg); }
+    100% { -webkit-transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+#fox.walks
+{
+    animation: walking 5s 1 forwards;
+}
+@keyframes walking
+{
+    from
+    {
+        transform: translate(98vw, -8vh);
+    }
+    to
+    {
+        transform: translate(150vw, -22vh);
+    }
+}
+#fox.speaks
+{
+
+}

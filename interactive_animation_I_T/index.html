@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="assets/font-awesome-4.7.0/css/font-awesome.min.css">
+    <title>Interactive Animation</title>
+</head>
+<body>
+    <audio id="intro" autoplay="autoplay">
+        <source src="audio/Introduction(mp3cut.net).mp3" />
+    </audio>
+    <div id="background">
+        <div id="titleDiv">
+            <img id="titlePage" src="img/titlepage.jpg">
+            <button id="begin_btn"><i class="fa fa-4x fa-chevron-circle-right" aria-hidden="true"></i></button>
+        </div>
+        <div id="mainScene">
+            <div class="row">
+                <img id="crow" class="charFadeIn" src="img/crow.png">
+                <img id="cheese_sm" class="charFadeIn" src="img/cheese_wedge_sm.png">
+            </div>
+            <div class="row">
+                <img id="fox" class="charFadeIn" src="img/fox.png">
+            </div>
+
+        </div>
+
+    </div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
